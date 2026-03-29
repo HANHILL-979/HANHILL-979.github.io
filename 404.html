@@ -52,7 +52,7 @@
 <body><div id="l_cover"></div><div class="l_body index" id="start" layout="404" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><div class="sub cap">hello world</div></a></div></header>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><div class="sub cap">硪愛妳</div></a></div></header>
 
 <div class="nav-area">
 
@@ -84,6 +84,21 @@
   <a class='button' id='back' href="/">Back to Home</a>
 </article>
 
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="HANHILL-979/fvac" data-repo-id="R_kgDORzpUgg" data-category="General" data-category-id="DIC_kwDORzpUgs4C5hJY" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
 
 
 
@@ -742,6 +757,45 @@
 
 
 <!-- optional -->
+
+  <script>
+  (function() {
+    const lazyload = false;
+    
+    function initGiscus() {
+      const el = document.querySelector('#comments #giscus');
+      if (!el) return;
+      
+      function load_giscus() {
+        try {
+          el.innerHTML = '';
+        } catch (error) {
+          console.error(error);
+        }
+        const script = document.createElement('script');
+        script.async = true;
+        for (const key of Object.keys(el.attributes)) {
+          const attr = el.attributes[key];
+          if (['class', 'id'].includes(attr.name) === false) {
+            script.setAttribute(attr.name, attr.value);
+          }
+        }
+        el.appendChild(script);
+      }
+      
+      util.viewportLazyload(el, load_giscus, lazyload);
+    }
+    
+    // Store in global stellar namespace for PJAX reinitialization
+    window.stellar = window.stellar || {};
+    window.stellar.initComments = window.stellar.initComments || {};
+    window.stellar.initComments.giscus = initGiscus;
+    
+    // Initialize on page load
+    initGiscus();
+  })();
+</script>
+
 
 
 
