@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo 主题 Markdown 全面渲染测试</title>
+    <url>/2026/03/29/hello-Linda/</url>
+    <content><![CDATA[这是一篇用于测试 Hexo 主题（特别是 Matery 等现代化主题）底层渲染引擎兼容性的标准演示文章。你可以通过本文检验当前主题的字体排版、代码高亮以及公式解析是否正常。
+1. 文本排版与强调在日常的技术笔记写作中，我们经常需要强调某些核心概念（加粗文字），或者使用专用学术术语（斜体文字）。如果需要标记已经废弃的电路设计方案，可以使用删除线。
+
+2. 列表排版测试2.1 无序列表（知识点归纳）在复习半导体物理时，我们需要重点掌握以下核心器件结构：
+
+PN结二极管
+双极型晶体管 (BJT)
+金属-氧化物-半导体场效应管 (MOSFET)
+
+2.2 有序列表（操作步骤流程）进行嵌入式微控制器开发的标准流程如下：
+
+配置系统时钟树与 GPIO 引脚映射。
+编写底层外设（如 I2C&#x2F;SPI）初始化代码。
+编译工程，并使用 SWD 接口烧录至核心板进行联机调试。
+
+
+3. 代码高亮引擎测试日常记录编程技术方案时，代码块的高亮着色非常重要。
+行内代码：我们可以使用 printf() 语句来进行简单的串口数据流格式化输出。
+多行代码块（C语言）：
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+
+// 这是一个用于测试高亮渲染的延时函数
+void delay(uint32_t count) {
+    while(count--) {
+        // 汇编指令占位，防止被编译器优化
+        __asm(&quot;nop&quot;); 
+    }
+}
+
+int main() {
+    uint32_t test_val = 1024;
+    printf(&quot;Initialization complete. Value: %d\n&quot;, test_val);
+    return 0;
+}
+
+]]></content>
+      <categories>
+        <category>博客建设</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>语法规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>郭小瓷，你是我想倾尽所有去守护的那个“命中注定”</title>
+    <url>/2026/03/29/To-Xiaoci/</url>
+    <content><![CDATA[你好，美丽漂亮、可爱大方的小瓷。
+在这个寒假漫长的分离里，思念像是不受控制的藤蔓。我想我需要用文字记录下一些东西，关于你，关于我，关于那些神奇的心动时刻。
+小郭同学想在这里正式地、坚定地告诉你：我好喜欢你，可以做我女朋友吗？
+1. 原来，这才是心脏漏了一拍的感觉在遇见你之前，我对于“喜欢”的定义很模糊。我以为的喜欢，或许只是一时的好感，才尝试着在一起。
+可是，当你出现后，一切都不一样了。
+现在看来，每一次重新见面，我的内心都在窃喜：为什么我这么幸运，可以遇到这么美丽的女孩。
+我还记得那天的场景，人造雪花纷纷扬扬地掉落在你的眼镜上。当你摘下眼镜的瞬间，我原本滔滔不绝、昼夜不息的嘴，在那一刻突然不受大脑控制了——因为在那一瞬间，我的大脑变得一片空白。
+我想，那是我的心脏在告诉我，它漏了一拍。
+我知道未来我的心脏会为谁跳动。那天晚上我想了一整晚，畅想了各种未来，那种感觉仿佛回到了初中。原来，真正喜欢一个人的时候，首先来到的是自卑。
+我在畅想一切，不知道还有没有结果，不过，我会加油的。
+2. 小郭同学的“陷落”记录
+After that day, I write down a lot. I’m falling in love with a girl who I love.
+
+我想，这次我真的陷进去了。
+我开始小心翼翼地记录下关于你的一切喜好，不仅是你那“六点要求”，更是你生活里的每一个小细节：
+
+要好好对待她（这是第一准则）。
+她不吃羊肉。
+她喜欢西高地（那种白白嫩嫩的小狗）。
+她喜欢很多很多好看、好玩的东西。
+
+3. 弄巧成拙的事故与感动的信物那天表白的时候，我大概已经猜到了你的想法，但是我不敢确认。不好意思啦，小郭同学。
+在海底捞那个“事故”，确实是我的责任，当时没说清楚，哈哈哈，真的是弄巧成拙了。
+不过，之后的戒指真的很美丽。
+我非常喜欢你亲手给我做的戒指，真的好感动，好喜欢。还有那束碎冰蓝玫瑰，因为我也很喜欢这个花色，不得不说，你太有品味了（So do I）！
+4. 你的脆弱，由我来坚定选择我喜欢那天你笑起来的嘴角，也喜欢你的严谨。
+可是，我也知道，看似坚强的你在感情里其实只是一个小孩。你还是很敏感脆弱的，你也说过，你已经在悬崖边了，你在打赌。
+你打赌，我不会伤害你。
+小瓷，我希望能让你得偿所愿。我会坚定地选择你。 我们需要一直好好在一起，我绝不会伤害你。
+5. 关于未来，我们要一直一直下去这寒假的一个月真难熬啊，感觉像过了不知道多久。哎，不知道什么时候能见到你咯。
+不过没事哒，我可以接受。因为你那天牵我的手，让我又一次感觉到了强烈的心跳。好神奇，你总是给我带来心动，怎么回事嘛。
+我想，**你就是那个对的人。**我很喜欢你，特别特别喜欢的那种。
+你说你害怕分开，害怕失去。那我们就永远不分开吧！！
+我希望我们都能在我们共同喜欢的城市，工作、生活，一直一直下去。你也说过，你会因为我而考研，得知这个消息，我很开心呀！这样我们就可能在一个城市，也会有更多共同话题啦！
+我想倾尽我有的一切，让你和我一起，开心快乐度过每一天。
+
+To Xiaoci:Wait for our reunion.
+]]></content>
+      <categories>
+        <category>私人信函</category>
+      </categories>
+      <tags>
+        <tag>小瓷</tag>
+        <tag>告白</tag>
+        <tag>心动记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32 SPI 通信配置记录</title>
+    <url>/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[本文记录基于 STM32 实现 SPI 全双工通信的底层寄存器配置流程。
+1. GPIO 复用配置在启用 SPI 硬件宏单元前，必须先使能对应端口的时钟，并将引脚配置为复用推挽输出模式。
+2. 核心代码实现// SPI1 初始化函数片段
+void SPI1_Init(void) {
+    // 假设此处为时钟使能与 GPIO 配置代码
+    SPI1-&gt;CR1 |= 0x0314; // 设置波特率分频，主模式
+    SPI1-&gt;CR1 |= 0x0040; // 使能 SPI 模块
+}
+
+]]></content>
+      <categories>
+        <category>硬件协议</category>
+      </categories>
+      <tags>
+        <tag>嵌入式开发</tag>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 主题 Markdown 全面渲染测试</title>
+    <url>/2026/03/29/Markdown-Render-Test/</url>
+    <content><![CDATA[这是一篇用于测试 Hexo 主题（特别是 Matery 等现代化主题）底层渲染引擎兼容性的标准演示文章。你可以通过本文检验当前主题的字体排版、代码高亮以及公式解析是否正常。
+1. 文本排版与强调在日常的技术笔记写作中，我们经常需要强调某些核心概念（加粗文字），或者使用专用学术术语（斜体文字）。如果需要标记已经废弃的电路设计方案，可以使用删除线。
+
+2. 列表排版测试2.1 无序列表（知识点归纳）在复习半导体物理时，我们需要重点掌握以下核心器件结构：
+
+PN结二极管
+双极型晶体管 (BJT)
+金属-氧化物-半导体场效应管 (MOSFET)
+
+2.2 有序列表（操作步骤流程）进行嵌入式微控制器开发的标准流程如下：
+
+配置系统时钟树与 GPIO 引脚映射。
+编写底层外设（如 I2C&#x2F;SPI）初始化代码。
+编译工程，并使用 SWD 接口烧录至核心板进行联机调试。
+
+
+3. 代码高亮引擎测试日常记录编程技术方案时，代码块的高亮着色非常重要。
+行内代码：我们可以使用 printf() 语句来进行简单的串口数据流格式化输出。
+多行代码块（C语言）：
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+
+// 这是一个用于测试高亮渲染的延时函数
+void delay(uint32_t count) {
+    while(count--) {
+        // 汇编指令占位，防止被编译器优化
+        __asm(&quot;nop&quot;); 
+    }
+}
+
+int main() {
+    uint32_t test_val = 1024;
+    printf(&quot;Initialization complete. Value: %d\n&quot;, test_val);
+    return 0;
+}
+
+]]></content>
+      <categories>
+        <category>博客建设</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>语法规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2026/03/28/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+]]></content>
+  </entry>
+</search>
