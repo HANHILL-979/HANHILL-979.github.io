@@ -1,68 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>STM32 SPI 通信配置记录</title>
-    <url>/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[本文记录基于 STM32 实现 SPI 全双工通信的底层寄存器配置流程。
-1. GPIO 复用配置在启用 SPI 硬件宏单元前，必须先使能对应端口的时钟，并将引脚配置为复用推挽输出模式。
-2. 核心代码实现// SPI1 初始化函数片段
-void SPI1_Init(void) {
-    // 假设此处为时钟使能与 GPIO 配置代码
-    SPI1-&gt;CR1 |= 0x0314; // 设置波特率分频，主模式
-    SPI1-&gt;CR1 |= 0x0040; // 使能 SPI 模块
-}
-
-]]></content>
-      <categories>
-        <category>硬件协议</category>
-      </categories>
-      <tags>
-        <tag>嵌入式开发</tag>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的 CET6 词汇学习 App</title>
-    <url>/2026/03/29/CET6-AI-Vocabulary-App/</url>
-    <content><![CDATA[简介这是一款基于 AI 的 CET6 词汇学习应用，通过改写来自 Global News 的真实文章，将其转化为使用 CET6 词汇的版本，帮助学习者在真实语境中掌握六级核心词汇。
-🔗 在线体验: https://hankhills.vercel.app
-核心功能1. 文章来源从 Global News 获取最新的真实新闻文章，确保学习内容的时效性和真实性。
-2. AI 智能改写利用 AI 技术将原文改写为 CET6 词汇版本：
-
-保留原文核心意思
-替换为六级考纲词汇
-保持语句通顺自然
-
-3. 对比学习同时展示原文和改写后的版本，方便对比学习：
-
-理解词汇替换的语境
-掌握高级词汇的使用场景
-
-技术栈
-前端: 部署在 Vercel
-AI: 智能文本改写
-数据源: Global News API
-
-使用建议
-先阅读原文，理解大意
-对比改写版本，标记不熟悉的 CET6 词汇
-尝试用自己的话复述文章
-定期复习学过的词汇
-
-总结通过真实新闻文章学习 CET6 词汇，不仅能提高词汇量，还能了解时事，一举两得。欢迎体验！
-
-项目地址: https://hankhills.vercel.app
-]]></content>
-      <categories>
-        <category>个人项目</category>
-      </categories>
-      <tags>
-        <tag>英语学习</tag>
-        <tag>AI</tag>
-        <tag>项目分享</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</title>
     <url>/2026/03/30/opencode-antigravity-auth-plugin/</url>
     <content><![CDATA[Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额在现代 AI 辅助开发中，获取稳定且高质量的模型访问至关重要。今天我要介绍一个实用的 Opencode 插件——opencode-antigravity-auth，它能让你通过 Google OAuth 认证来访问 Antigravity（Google 的 IDE）的配额，从而使用 Claude Opus 4.6、Gemini 3.1 Pro 等高级模型。
@@ -220,6 +158,47 @@ GitHub 仓库：NoeFabris&#x2F;opencode-antigravity-auth
 ]]></content>
   </entry>
   <entry>
+    <title>我的 CET6 词汇学习 App</title>
+    <url>/2026/03/29/CET6-AI-Vocabulary-App/</url>
+    <content><![CDATA[简介这是一款基于 AI 的 CET6 词汇学习应用，通过改写来自 Global News 的真实文章，将其转化为使用 CET6 词汇的版本，帮助学习者在真实语境中掌握六级核心词汇。
+🔗 在线体验: https://hankhills.vercel.app
+核心功能1. 文章来源从 Global News 获取最新的真实新闻文章，确保学习内容的时效性和真实性。
+2. AI 智能改写利用 AI 技术将原文改写为 CET6 词汇版本：
+
+保留原文核心意思
+替换为六级考纲词汇
+保持语句通顺自然
+
+3. 对比学习同时展示原文和改写后的版本，方便对比学习：
+
+理解词汇替换的语境
+掌握高级词汇的使用场景
+
+技术栈
+前端: 部署在 Vercel
+AI: 智能文本改写
+数据源: Global News API
+
+使用建议
+先阅读原文，理解大意
+对比改写版本，标记不熟悉的 CET6 词汇
+尝试用自己的话复述文章
+定期复习学过的词汇
+
+总结通过真实新闻文章学习 CET6 词汇，不仅能提高词汇量，还能了解时事，一举两得。欢迎体验！
+
+项目地址: https://hankhills.vercel.app
+]]></content>
+      <categories>
+        <category>个人项目</category>
+      </categories>
+      <tags>
+        <tag>英语学习</tag>
+        <tag>AI</tag>
+        <tag>项目分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 主题 Markdown 全面渲染测试</title>
     <url>/2026/03/29/hello-Linda/</url>
     <content><![CDATA[这是一篇用于测试 Hexo 主题（特别是 Matery 等现代化主题）底层渲染引擎兼容性的标准演示文章。你可以通过本文检验当前主题的字体排版、代码高亮以及公式解析是否正常。
@@ -265,6 +244,27 @@ int main() {
       <tags>
         <tag>测试</tag>
         <tag>语法规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32 SPI 通信配置记录</title>
+    <url>/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[本文记录基于 STM32 实现 SPI 全双工通信的底层寄存器配置流程。
+1. GPIO 复用配置在启用 SPI 硬件宏单元前，必须先使能对应端口的时钟，并将引脚配置为复用推挽输出模式。
+2. 核心代码实现// SPI1 初始化函数片段
+void SPI1_Init(void) {
+    // 假设此处为时钟使能与 GPIO 配置代码
+    SPI1-&gt;CR1 |= 0x0314; // 设置波特率分频，主模式
+    SPI1-&gt;CR1 |= 0x0040; // 使能 SPI 模块
+}
+
+]]></content>
+      <categories>
+        <category>硬件协议</category>
+      </categories>
+      <tags>
+        <tag>嵌入式开发</tag>
+        <tag>STM32</tag>
       </tags>
   </entry>
 </search>
