@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 8.1.1">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,22 +17,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>Tag: 测试 - HANK's cottage</title>
+  <title>Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额 - HANK's cottage</title>
 
   
-    <meta name="description" content="recording all the heartpound time">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HANK&#39;s cottage">
-<meta property="og:url" content="http://example.com/tags/%E6%B5%8B%E8%AF%95/">
+    <meta name="description" content="Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额在现代 AI 辅助开发中，获取稳定且高质量的模型访问至关重要。今天我要介绍一个实用的 Opencode 插件——opencode-antigravity-auth，它能让你通过 Google OAuth 认证来访问 Antigravity（Google 的 IDE）的配额，从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额">
+<meta property="og:url" content="http://example.com/2026/03/30/opencode-antigravity-auth-plugin/">
 <meta property="og:site_name" content="HANK&#39;s cottage">
-<meta property="og:description" content="recording all the heartpound time">
+<meta property="og:description" content="Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额在现代 AI 辅助开发中，获取稳定且高质量的模型访问至关重要。今天我要介绍一个实用的 Opencode 插件——opencode-antigravity-auth，它能让你通过 Google OAuth 认证来访问 Antigravity（Google 的 IDE）的配额，从">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-30T02:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-30T04:52:19.687Z">
 <meta property="article:author" content="Hank Hill">
+<meta property="article:tag" content="Google">
+<meta property="article:tag" content="OAuth">
+<meta property="article:tag" content="antigravity">
+<meta property="article:tag" content="opencode">
+<meta property="article:tag" content="插件">
 <meta name="twitter:card" content="summary">
   
   
   
-  
+  <meta name="keywords" content="opencode,插件,Google,OAuth,antigravity">
 
   <!-- feed -->
   
@@ -46,10 +53,10 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://example.com","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"name":"HANK's cottage","description":"recording all the heartpound time","url":"http://example.com"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"dateCreated":"2026-03-30T10:00:00+08:00","dateModified":"2026-03-30T12:52:19+08:00","datePublished":"2026-03-30T10:00:00+08:00","description":"","headline":"Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2026/03/30/opencode-antigravity-auth-plugin/"},"publisher":{"@type":"Organization","name":"Hank Hill","sameAs":[]},"url":"http://example.com/2026/03/30/opencode-antigravity-auth-plugin/","keywords":"opencode, 插件, Google, OAuth, antigravity","image":[]}</script>
   
 </head>
-<body><div id="l_cover"></div><div class="l_body index" id="start" layout="undefined" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><div class="sub cap">硪愛妳</div></a></div></header>
@@ -61,23 +68,187 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2026/03/30/opencode-antigravity-auth-plugin/"><span class="title">Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></a><a class="item title" href="/2026/03/29/CET6-AI-Vocabulary-App/"><span class="title">我的 CET6 词汇学习 App</span></a><a class="item title" href="/2026/03/29/To-Xiaoci/"><span class="title">郭小瓷，你是我想倾尽所有去守护的那个“命中注定”</span></a><a class="item title" href="/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"><span class="title">STM32 SPI 通信配置记录</span></a><a class="item title" href="/2026/03/29/hello-Linda/"><span class="title">Hexo 主题 Markdown 全面渲染测试</span></a></div></widget>
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Opencode-Antigravity-Auth-%E6%8F%92%E4%BB%B6%EF%BC%9A%E9%80%9A%E8%BF%87-Google-OAuth-%E8%A7%A3%E9%94%81-Antigravity-%E9%85%8D%E9%A2%9D"><span class="toc-number">1.</span> <span class="toc-text">Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">主要功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">方式一：自动安装（推荐）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.2.</span> <span class="toc-text">方式二：手动安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%82%E8%80%83"><span class="toc-number">1.3.</span> <span class="toc-text">模型参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Antigravity-%E9%85%8D%E9%A2%9D%EF%BC%88Claude-%E5%92%8C-Gemini-%E7%9A%84%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">Antigravity 配额（Claude 和 Gemini 的默认路由）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gemini-CLI-%E9%85%8D%E9%A2%9D%EF%BC%88%E4%B8%8E-Antigravity-%E5%88%86%E5%BC%80%E7%9A%84%E9%85%8D%E9%A2%9D%E6%B1%A0%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">Gemini CLI 配额（与 Antigravity 分开的配额池）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.4.</span> <span class="toc-text">完整配置示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%B4%A6%E6%88%B7%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.5.</span> <span class="toc-text">多账户设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"><span class="toc-number">1.6.</span> <span class="toc-text">故障排除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E9%87%8D%E7%BD%AE"><span class="toc-number">1.6.1.</span> <span class="toc-text">快速重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.6.2.</span> <span class="toc-text">常见问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E8%AD%A6%E5%91%8A"><span class="toc-number">1.7.</span> <span class="toc-text">重要警告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.8.</span> <span class="toc-text">项目信息</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>Join Discussion</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><div class="sub cap">硪愛妳</div></a></div></header>
-
- 
 
 
 
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">Recent</a><a href="/categories/">Categories</a><a class="active" href="/tags/">Tag: 测试</a><a href="/archives/">Archives</a></nav></div></div></div>
-<div class="post-list post"><div class="post-card-wrap"><a class="post-card post" href="/2026/03/29/hello-Linda/">
-<article class="md-text"><h2 class="post-title">Hexo 主题 Markdown 全面渲染测试</h2><div class="excerpt"><p>这是一篇用于测试 Hexo 主题（特别是 Matery 等现代化主题）底层渲染引擎兼容性的标准演示文章。你可以通过本文检验当前主题的字体排版、代码高亮以及公式解析是否正常。
-1. 文本排版与强调在日常的技术笔记写作中，我们经常需要强调某些核心概念（加...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2026-03-29T04:30:00.000Z">2026-03-29</time></span><span class="cap breadcrumb"><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg><span>博客建设</span></span></div></article>
-</a></div></div>
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E5%B7%A5%E5%85%B7/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">开发环境</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-03-30T02:00:00.000Z">2026-03-30</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-03-30T04:52:19.687Z">2026-03-30</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="Opencode-Antigravity-Auth-插件：通过-Google-OAuth-解锁-Antigravity-配额"><a href="#Opencode-Antigravity-Auth-插件：通过-Google-OAuth-解锁-Antigravity-配额" class="headerlink" title="Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额"></a>Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</h1><p>在现代 AI 辅助开发中，获取稳定且高质量的模型访问至关重要。今天我要介绍一个实用的 Opencode 插件——<strong>opencode-antigravity-auth</strong>，它能让你通过 Google OAuth 认证来访问 Antigravity（Google 的 IDE）的配额，从而使用 Claude Opus 4.6、Gemini 3.1 Pro 等高级模型。</p>
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><p>这个插件提供了以下核心特性：</p>
+<ol>
+<li><strong>多模型支持</strong> - 通过 Google OAuth 访问 Claude Opus 4.6、Sonnet 4.6 和 Gemini 3.1 Pro&#x2F;Flash</li>
+<li><strong>多账户管理</strong> - 支持添加多个 Google 账户，配额耗尽时自动轮换</li>
+<li><strong>双配额系统</strong> - 同时访问 Antigravity 和 Gemini CLI 的配额</li>
+<li><strong>思维模型支持</strong> - 支持 Claude 和 Gemini 3 的扩展思维功能，可配置思维预算</li>
+<li><strong>Google 搜索接地</strong> - 为 Gemini 模型启用网络搜索功能</li>
+<li><strong>自动恢复</strong> - 自动处理会话错误和工具故障</li>
+<li><strong>插件兼容性</strong> - 可与其他 OpenCode 插件（oh-my-opencode、dcp 等）配合使用</li>
+</ol>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="方式一：自动安装（推荐）"><a href="#方式一：自动安装（推荐）" class="headerlink" title="方式一：自动安装（推荐）"></a>方式一：自动安装（推荐）</h3><p>将以下命令粘贴到任何 LLM 代理（Claude Code、OpenCode、Cursor 等）中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install the opencode-antigravity-auth plugin and add the Antigravity model definitions to ~/.config/opencode/opencode.json by following: https://raw.githubusercontent.com/NoeFabris/opencode-antigravity-auth/dev/README.md</span><br></pre></td></tr></table></figure>
+
+<h3 id="方式二：手动安装"><a href="#方式二：手动安装" class="headerlink" title="方式二：手动安装"></a>方式二：手动安装</h3><ol>
+<li><p><strong>添加插件配置</strong></p>
+<p>在 <code>~/.config/opencode/opencode.json</code> 中添加：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;plugin&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;opencode-antigravity-auth@latest&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>登录 Google 账户</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opencode auth login</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置模型</strong></p>
+<p>运行 <code>opencode auth login</code> → 选择 Google → OAuth with Google (Antigravity) → 选择 “Configure models in opencode.json”（自动配置所有模型）</p>
+</li>
+<li><p><strong>开始使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opencode run <span class="string">&quot;Hello&quot;</span> --model=google/antigravity-claude-opus-4-6-thinking --variant=max</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="模型参考"><a href="#模型参考" class="headerlink" title="模型参考"></a>模型参考</h2><h3 id="Antigravity-配额（Claude-和-Gemini-的默认路由）"><a href="#Antigravity-配额（Claude-和-Gemini-的默认路由）" class="headerlink" title="Antigravity 配额（Claude 和 Gemini 的默认路由）"></a>Antigravity 配额（Claude 和 Gemini 的默认路由）</h3><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>变体</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>antigravity-gemini-3-pro</td>
+<td>low, high</td>
+<td>Gemini 3 Pro 支持思维</td>
+</tr>
+<tr>
+<td>antigravity-gemini-3.1-pro</td>
+<td>low, high</td>
+<td>Gemini 3.1 Pro 支持思维（取决于部署情况）</td>
+</tr>
+<tr>
+<td>antigravity-gemini-3-flash</td>
+<td>minimal, low, medium, high</td>
+<td>Gemini 3 Flash 支持思维</td>
+</tr>
+<tr>
+<td>antigravity-claude-sonnet-4-6</td>
+<td>—</td>
+<td>Claude Sonnet 4.6</td>
+</tr>
+<tr>
+<td>antigravity-claude-opus-4-6-thinking</td>
+<td>low, max</td>
+<td>Claude Opus 4.6 支持扩展思维</td>
+</tr>
+</tbody></table>
+<h3 id="Gemini-CLI-配额（与-Antigravity-分开的配额池）"><a href="#Gemini-CLI-配额（与-Antigravity-分开的配额池）" class="headerlink" title="Gemini CLI 配额（与 Antigravity 分开的配额池）"></a>Gemini CLI 配额（与 Antigravity 分开的配额池）</h3><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gemini-2.5-flash</td>
+<td>Gemini 2.5 Flash</td>
+</tr>
+<tr>
+<td>gemini-2.5-pro</td>
+<td>Gemini 2.5 Pro</td>
+</tr>
+<tr>
+<td>gemini-3-flash-preview</td>
+<td>Gemini 3 Flash（预览版）</td>
+</tr>
+<tr>
+<td>gemini-3-pro-preview</td>
+<td>Gemini 3 Pro（预览版）</td>
+</tr>
+<tr>
+<td>gemini-3.1-pro-preview</td>
+<td>Gemini 3.1 Pro（预览版）</td>
+</tr>
+</tbody></table>
+<h2 id="完整配置示例"><a href="#完整配置示例" class="headerlink" title="完整配置示例"></a>完整配置示例</h2><p>将以下配置添加到 <code>~/.config/opencode/opencode.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://opencode.ai/config.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;plugin&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;opencode-antigravity-auth@latest&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;provider&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;google&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;antigravity-gemini-3-pro&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Gemini 3 Pro (Antigravity)&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;limit&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="number">1048576</span><span class="punctuation">,</span> <span class="attr">&quot;output&quot;</span><span class="punctuation">:</span> <span class="number">65535</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;modalities&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;input&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;text&quot;</span><span class="punctuation">,</span> <span class="string">&quot;image&quot;</span><span class="punctuation">,</span> <span class="string">&quot;pdf&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;output&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;text&quot;</span><span class="punctuation">]</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;variants&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;low&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;thinkingLevel&quot;</span><span class="punctuation">:</span> <span class="string">&quot;low&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;high&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;thinkingLevel&quot;</span><span class="punctuation">:</span> <span class="string">&quot;high&quot;</span> <span class="punctuation">&#125;</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;antigravity-claude-opus-4-6-thinking&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Claude Opus 4.6 Thinking (Antigravity)&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;limit&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="number">200000</span><span class="punctuation">,</span> <span class="attr">&quot;output&quot;</span><span class="punctuation">:</span> <span class="number">64000</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;modalities&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;input&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;text&quot;</span><span class="punctuation">,</span> <span class="string">&quot;image&quot;</span><span class="punctuation">,</span> <span class="string">&quot;pdf&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;output&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;text&quot;</span><span class="punctuation">]</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;variants&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;low&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;thinkingConfig&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;thinkingBudget&quot;</span><span class="punctuation">:</span> <span class="number">8192</span> <span class="punctuation">&#125;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;max&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;thinkingConfig&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;thinkingBudget&quot;</span><span class="punctuation">:</span> <span class="number">32768</span> <span class="punctuation">&#125;</span> <span class="punctuation">&#125;</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="comment">// ... 其他模型配置</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="多账户设置"><a href="#多账户设置" class="headerlink" title="多账户设置"></a>多账户设置</h2><p>要获得更高的配额，可以添加多个 Google 账户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opencode auth login  <span class="comment"># 再次运行以添加更多账户</span></span><br></pre></td></tr></table></figure>
+
+<p>账户管理选项：</p>
+<ul>
+<li><strong>配置模型</strong> - 在 opencode.json 中自动配置所有插件模型</li>
+<li><strong>检查配额</strong> - 查看每个账户的剩余 API 配额</li>
+<li><strong>管理账户</strong> - 启用&#x2F;禁用用于轮换的特定账户</li>
+</ul>
+<h2 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h2><h3 id="快速重置"><a href="#快速重置" class="headerlink" title="快速重置"></a>快速重置</h3><p>大多数问题可以通过删除账户文件并重新登录解决：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> ~/.config/opencode/antigravity-accounts.json</span><br><span class="line">opencode auth login</span><br></pre></td></tr></table></figure>
+
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol>
+<li><strong>403 权限拒绝</strong> - 需要在 Google Cloud Console 中启用 Gemini for Google Cloud API</li>
+<li><strong>找不到 Gemini 模型</strong> - 在 provider 配置中添加 <code>&quot;npm&quot;: &quot;@ai-sdk/google&quot;</code></li>
+<li><strong>400 错误</strong> - 更新到最新测试版或禁用不兼容的 MCP 服务器</li>
+<li><strong>所有账户速率限制</strong> - 更新插件或删除账户文件重新认证</li>
+</ol>
+<h2 id="重要警告"><a href="#重要警告" class="headerlink" title="重要警告"></a>重要警告</h2><p>⚠️ <strong>使用风险提示</strong></p>
+<p>使用此插件可能违反 Google 的服务条款。一些用户报告了他们的 Google 账户被禁止或影子禁止（无明确通知的限制访问）。</p>
+<p>使用此插件即表示你承认：</p>
+<ul>
+<li>这是一个未经 Google 认可的非官方工具</li>
+<li>你的账户可能被暂停或永久禁止</li>
+<li>你需要承担使用此插件的所有风险</li>
+</ul>
+<h2 id="项目信息"><a href="#项目信息" class="headerlink" title="项目信息"></a>项目信息</h2><ul>
+<li><strong>GitHub 仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/NoeFabris/opencode-antigravity-auth">NoeFabris&#x2F;opencode-antigravity-auth</a></li>
+<li><strong>许可证</strong>：MIT License</li>
+<li><strong>支持</strong>：如果此插件对你有帮助，可以考虑在 Ko-fi 上支持开发者</li>
+</ul>
+<p>这个插件为 Opencode 用户提供了强大的模型访问能力，但使用时请务必了解相关风险。对于需要高质量 AI 辅助开发的开发者来说，这是一个值得尝试的工具。</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2026/03/29/To-Xiaoci/">郭小瓷，你是我想倾尽所有去守护的那个“命中注定”</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="HANHILL-979/fvac" data-repo-id="R_kgDORzpUgg" data-category="General" data-category-id="DIC_kwDORzpUgs4C5hJY" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
 
 
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hank Hill</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
@@ -99,7 +270,7 @@
 
 <script type="text/javascript">
   window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
-  window.canonical["param"] = {"permalink":null,"checklink":"/js/plugins/video.js"};
+  window.canonical["param"] = {"permalink":"http://example.com/2026/03/30/opencode-antigravity-auth-plugin/","checklink":"/js/plugins/video.js"};
   // Fix: Ensure page is at the correct top position on data load
   if (history.scrollRestoration) {
     history.scrollRestoration = 'auto';
@@ -735,6 +906,45 @@
 
 
 <!-- optional -->
+
+  <script>
+  (function() {
+    const lazyload = false;
+    
+    function initGiscus() {
+      const el = document.querySelector('#comments #giscus');
+      if (!el) return;
+      
+      function load_giscus() {
+        try {
+          el.innerHTML = '';
+        } catch (error) {
+          console.error(error);
+        }
+        const script = document.createElement('script');
+        script.async = true;
+        for (const key of Object.keys(el.attributes)) {
+          const attr = el.attributes[key];
+          if (['class', 'id'].includes(attr.name) === false) {
+            script.setAttribute(attr.name, attr.value);
+          }
+        }
+        el.appendChild(script);
+      }
+      
+      util.viewportLazyload(el, load_giscus, lazyload);
+    }
+    
+    // Store in global stellar namespace for PJAX reinitialization
+    window.stellar = window.stellar || {};
+    window.stellar.initComments = window.stellar.initComments || {};
+    window.stellar.initComments.giscus = initGiscus;
+    
+    // Initialize on page load
+    initGiscus();
+  })();
+</script>
+
 
 
 
