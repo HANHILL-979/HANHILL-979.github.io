@@ -1,4 +1,22 @@
 :root {
+  --blur-px: 12px;
+  --blur-bg: var(--bg-a50);
+  --blur-sat: 300%;
+}
+.blur {
+  background-color: var(--blur-bg);
+}
+@supports ((-webkit-backdrop-filter: blur(var(--blur-px))) or (backdrop-filter: blur(var(--blur-px)))) {
+  .blur {
+    background-color: var(--blur-bg) !important;
+    backdrop-filter: saturate(var(--blur-sat)) blur(var(--blur-px));
+    -webkit-backdrop-filter: saturate(var(--blur-sat)) blur(var(--blur-px));
+  }
+}
+.blur:hover {
+  background-color: var(--card);
+}
+:root {
   --width-main: 720px;
   --fsp: 17px;
   --fsh2: calc(var(--fsp) + 11px);
@@ -37,9 +55,18 @@
   margin: 1.2rem 0;
   padding: 1rem 1.25rem;
   border-radius: 16px;
-  box-shadow: $boxshadow-card;
-  background: var(--bg-a75);
-  border: none;
+  background-color: var(--blur-bg);
+  box-shadow: $boxshadow-card-float;
+}
+@supports ((-webkit-backdrop-filter: blur(var(--blur-px))) or (backdrop-filter: blur(var(--blur-px)))) {
+  .md-text.content .cet6-word-card {
+    background-color: var(--blur-bg) !important;
+    backdrop-filter: saturate(var(--blur-sat)) blur(var(--blur-px));
+    -webkit-backdrop-filter: saturate(var(--blur-sat)) blur(var(--blur-px));
+  }
+}
+.md-text.content .cet6-word-card:hover {
+  background-color: var(--card);
 }
 .md-text.content .cet6-word-card .cet6-word-head {
   display: flex;
