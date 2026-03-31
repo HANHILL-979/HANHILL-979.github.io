@@ -90,6 +90,14 @@
           <span class='name'>项目分享</span>
         </a>
       
+        <a class='tag' href="/tags/%E6%B5%8B%E8%AF%95/">
+          <span class='name'>测试</span>
+        </a>
+      
+        <a class='tag' href="/tags/%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83/">
+          <span class='name'>语法规范</span>
+        </a>
+      
         <a class='tag' href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
           <span class='name'>嵌入式开发</span>
         </a>
@@ -116,14 +124,6 @@
       
         <a class='tag' href="/tags/antigravity/">
           <span class='name'>antigravity</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E6%B5%8B%E8%AF%95/">
-          <span class='name'>测试</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83/">
-          <span class='name'>语法规范</span>
         </a>
       
     </article>
@@ -1046,7 +1046,39 @@
     }
   }, 'swiper');
 </script>
+<script defer type="text/javascript" src="https://gcore.jsdelivr.net/npm/mermaid@v9/dist/mermaid.min.js"></script>
 <script>
+  utils.initPlugin(() => {
+    const els = document.querySelectorAll('.mermaid');
+    if (els.length > 0) {
+      const mermaid_config = {
+        startOnLoad: false,
+        theme:
+          "auto" == "auto" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "neutral",
+        logLevel: 3,
+        themeVariables: {
+          darkMode: true
+        },
+        flowchart: {
+          useMaxWidth: false,
+          htmlLabels: true,
+          curve: "linear"
+        },
+        gantt: {
+          axisFormat: "%Y/%m/%d"
+        },
+        sequence: {
+          actorMargin: 50
+        }
+      }
+      mermaid.initialize(mermaid_config);
+      mermaid.run();
+    }
+  }, 'mermaid');
+</script><script>
   utils.initPlugin(() => {
     const codeElements = document.querySelectorAll('.code');
     if (codeElements.length > 0) {
