@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 8.1.1">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,22 +17,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>Archives - HANK's cottage</title>
+  <title>终端接入大模型API的网络排坑记录 - HANK's cottage</title>
 
   
-    <meta name="description" content="recording all the heartpound time">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="https://hanhill-979.github.io/archives/">
+    <meta name="description" content="日常开发中经常需要通过终端工具调用外部大模型 API。最近在使用 opencode 时遇到一个典型问题：浏览器能正常访问外网，但终端请求却持续报错、无法连通 API。 本文记录了完整的排查过程，包括使用 Proxifier 的尝试与踩坑，以及最终采用 Clash TUN 模式的解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终端接入大模型API的网络排坑记录">
+<meta property="og:url" content="https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/">
 <meta property="og:site_name" content="HANK&#39;s cottage">
-<meta property="og:description" content="recording all the heartpound time">
+<meta property="og:description" content="日常开发中经常需要通过终端工具调用外部大模型 API。最近在使用 opencode 时遇到一个典型问题：浏览器能正常访问外网，但终端请求却持续报错、无法连通 API。 本文记录了完整的排查过程，包括使用 Proxifier 的尝试与踩坑，以及最终采用 Clash TUN 模式的解决方案。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hanhill-979.github.io/images/terminal-proxy-success.png">
+<meta property="og:image" content="https://hanhill-979.github.io/images/proxifier-config.png">
+<meta property="og:image" content="https://hanhill-979.github.io/images/clash-tun-mode.png">
+<meta property="article:published_time" content="2026-04-01T02:30:00.000Z">
+<meta property="article:modified_time" content="2026-04-01T05:59:53.713Z">
 <meta property="article:author" content="Hank Hill">
+<meta property="article:tag" content="Clash">
+<meta property="article:tag" content="TUN">
+<meta property="article:tag" content="代理">
+<meta property="article:tag" content="技术实践">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hanhill-979.github.io/images/terminal-proxy-success.png">
   
   
   
-  
+  <meta name="keywords" content="网络,代理,Clash,TUN,技术实践">
 
   <!-- feed -->
   
@@ -46,10 +57,10 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://hanhill-979.github.io","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"name":"HANK's cottage","description":"recording all the heartpound time","url":"https://hanhill-979.github.io"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"dateCreated":"2026-04-01T10:30:00+08:00","dateModified":"2026-04-01T13:59:53+08:00","datePublished":"2026-04-01T10:30:00+08:00","description":"日常开发中经常需要通过终端工具调用外部大模型 API。最近在使用 opencode 时遇到一个典型问题：浏览器能正常访问外网，但终端请求却持续报错、无法连通 API。\n本文记录了完整的排查过程，包括使用 Proxifier 的尝试与踩坑，以及最终采用 Clash TUN 模式的解决方案。","headline":"终端接入大模型API的网络排坑记录","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"},"publisher":{"@type":"Organization","name":"Hank Hill","sameAs":[]},"url":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/","keywords":"网络, 代理, Clash, TUN, 技术实践","image":[]}</script>
   
 </head>
-<body><div id="l_cover"></div><div class="l_body index" id="start" layout="undefined" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><span class="sub cap" style="cursor:pointer" onclick="window.open('https://hankhills.vercel.app/', '_blank')">Ni parachute on my heart</span></a></div></header>
@@ -61,18 +72,105 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"><span class="title">终端接入大模型API的网络排坑记录</span></a><a class="item title" href="/2026/03/31/%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%88%B0AI%E6%97%B6%E4%BB%A3/"><span class="title">从张雪到AI时代：一个普通人的梦想</span></a><a class="item title" href="/2026/03/31/english%20day2/"><span class="title">CET-6 Vocabulary Journal - Day 2</span></a><a class="item title" href="/2026/03/31/english%20day1/"><span class="title">CET-6 Vocabulary Journal - Day 1</span></a><a class="item title" href="/2026/03/29/To-Xiaoci/"><span class="title">encrypt essay</span></a><a class="item title" href="/2026/03/30/opencode-antigravity-auth-plugin/"><span class="title">Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></a><a class="item title" href="/2026/03/29/CET6-AI-Vocabulary-App/"><span class="title">我的 CET6 词汇学习 App</span></a><a class="item title" href="/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"><span class="title">STM32 SPI 通信配置记录</span></a><a class="item title" href="/2026/03/29/hello-Linda/"><span class="title">Hexo 主题 Markdown 全面渲染测试</span></a></div></widget>
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E4%B8%8E%E5%88%9D%E6%AD%A5%E5%B0%9D%E8%AF%95%EF%BC%9AProxifier-%E7%99%BB%E5%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">1. 发现问题与初步尝试：Proxifier 登场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%B8%A9%E5%9D%91%E5%AE%9E%E5%BD%95%EF%BC%9A%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF%E4%B8%8E%E6%97%A0%E9%99%90%E6%AD%BB%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.</span> <span class="toc-text">2. 踩坑实录：语法错误与无限死循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E4%B8%80%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%AF%AD%E6%B3%95%E5%AF%BC%E8%87%B4%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5"><span class="toc-number">2.1.</span> <span class="toc-text">错误一：路径语法导致读取失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E4%BA%8C%EF%BC%9A%E9%81%97%E6%BC%8F%E6%A0%B8%E5%BF%83%E8%BF%9B%E7%A8%8B%E5%AF%BC%E8%87%B4-Infinite-Loop"><span class="toc-number">2.2.</span> <span class="toc-text">错误二：遗漏核心进程导致 Infinite Loop</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8E%A2%E5%AF%BB%E6%9B%B4%E4%BC%98%E8%A7%A3%EF%BC%9A%E4%BB%8E-API-%E5%8A%AB%E6%8C%81%E5%88%B0-TUN-%E8%99%9A%E6%8B%9F%E7%BD%91%E5%8D%A1"><span class="toc-number">3.</span> <span class="toc-text">3. 探寻更优解：从 API 劫持到 TUN 虚拟网卡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TUN-%E6%A8%A1%E5%BC%8F%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">3.1.</span> <span class="toc-text">TUN 模式工作机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9C%80%E7%BB%88%E7%BB%93%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text">4. 最终结论</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>Join Discussion</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><span class="sub cap" style="cursor:pointer" onclick="window.open('https://hankhills.vercel.app/', '_blank')">Ni parachute on my heart</span></a></div></header>
-
- 
 
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">Recent</a><a href="/categories/">Categories</a><a href="/tags/">Tags</a><a class="active" href="/archives/">Archives</a><a href="/today/">Today</a></nav></div></div></div>
-<div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2026</div><div class="archive-list"><a class='post fs14' href="/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"><time>04-01</time><span>终端接入大模型API的网络排坑记录</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/31/%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%88%B0AI%E6%97%B6%E4%BB%A3/"><time>03-31</time><span>从张雪到AI时代：一个普通人的梦想</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/31/english%20day2/"><time>03-31</time><span>CET-6 Vocabulary Journal - Day 2</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/31/english%20day1/"><time>03-31</time><span>CET-6 Vocabulary Journal - Day 1</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/30/opencode-antigravity-auth-plugin/"><time>03-30</time><span>Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/To-Xiaoci/"><time>03-29</time><span>encrypt essay</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/CET6-AI-Vocabulary-App/"><time>03-29</time><span>我的 CET6 词汇学习 App</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/hello-Linda/"><time>03-29</time><span>Hexo 主题 Markdown 全面渲染测试</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"><time>03-29</time><span>STM32 SPI 通信配置记录</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-04-01T02:30:00.000Z">2026-04-01</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-04-01T05:59:53.713Z">2026-04-01</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>终端接入大模型API的网络排坑记录</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>日常开发中经常需要通过终端工具调用外部大模型 API。最近在使用 opencode 时遇到一个典型问题：浏览器能正常访问外网，但终端请求却持续报错、无法连通 API。</p>
+<p>本文记录了完整的排查过程，包括使用 Proxifier 的尝试与踩坑，以及最终采用 Clash TUN 模式的解决方案。</p>
+<span id="more"></span>
+
+<h2 id="1-发现问题与初步尝试：Proxifier-登场"><a href="#1-发现问题与初步尝试：Proxifier-登场" class="headerlink" title="1. 发现问题与初步尝试：Proxifier 登场"></a>1. 发现问题与初步尝试：Proxifier 登场</h2><p>初步分析后发现，opencode 等终端工具不会读取 Windows 系统代理配置，而是直接通过 Socket 接口向目标 IP 发起连接，导致流量绕过了 Clash。</p>
+<p>常见解决方案是使用 <strong>Proxifier</strong> 进行进程级流量拦截。配置分两步：</p>
+<ol>
+<li><strong>建立代理通道</strong>：在 Proxifier 中添加 <code>127.0.0.1:7890</code>，协议选择 SOCKS5</li>
+<li><strong>设置分流规则</strong>：指定目标程序走代理，Clash 本身走直连</li>
+</ol>
+<p><img src="/images/terminal-proxy-success.png" alt="成功接入大模型"></p>
+<h2 id="2-踩坑实录：语法错误与无限死循环"><a href="#2-踩坑实录：语法错误与无限死循环" class="headerlink" title="2. 踩坑实录：语法错误与无限死循环"></a>2. 踩坑实录：语法错误与无限死循环</h2><p>在配置规则过程中遇到了两个典型错误：</p>
+<h3 id="错误一：路径语法导致读取失败"><a href="#错误一：路径语法导致读取失败" class="headerlink" title="错误一：路径语法导致读取失败"></a>错误一：路径语法导致读取失败</h3><p>直接从桌面复制快捷方式名称 <code>Clash for Windows.exe - 快捷方式 (2)</code>，系统报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unexpected blank space found...</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决</strong>：使用真实的 <code>.exe</code> 执行文件路径，空格路径用英文双引号 <code>&quot;&quot;</code> 包裹，多程序用英文分号 <code>;</code> 分隔。</p>
+<h3 id="错误二：遗漏核心进程导致-Infinite-Loop"><a href="#错误二：遗漏核心进程导致-Infinite-Loop" class="headerlink" title="错误二：遗漏核心进程导致 Infinite Loop"></a>错误二：遗漏核心进程导致 Infinite Loop</h3><p>修正语法后，Proxifier 弹出严重警告：<code>Infinite loop connection detected</code></p>
+<p><strong>根因分析</strong>：</p>
+<ul>
+<li>我只放行了图形界面 <code>clash for windows.exe</code></li>
+<li>遗漏了真正负责网络收发的核心进程 <code>clash-win64.exe</code></li>
+<li>Proxifier 把 Clash 核心发出的代理数据包强行拦截，又塞回 7890 端口，形成死循环</li>
+</ul>
+<p><strong>解决</strong>：将 <code>clash-win64.exe</code> 加入直连规则，opencode 改为 Proxy。</p>
+<p><img src="/images/proxifier-config.png" alt="Proxifier 配置成功"></p>
+<h2 id="3-探寻更优解：从-API-劫持到-TUN-虚拟网卡"><a href="#3-探寻更优解：从-API-劫持到-TUN-虚拟网卡" class="headerlink" title="3. 探寻更优解：从 API 劫持到 TUN 虚拟网卡"></a>3. 探寻更优解：从 API 劫持到 TUN 虚拟网卡</h2><p>虽然 Proxifier 方案可行，但它是闭源商业软件（31天试用），且基于 Winsock API Hooking，部分程序可能绕过。</p>
+<p>更彻底的方案是 <strong>Clash 原生 TUN 模式</strong>：</p>
+<h3 id="TUN-模式工作机制"><a href="#TUN-模式工作机制" class="headerlink" title="TUN 模式工作机制"></a>TUN 模式工作机制</h3><p>在 Clash「常规」设置中安装 Service Mode 并开启 TUN 后：</p>
+<ol>
+<li><strong>网卡层接管</strong>：系统创建 <code>wintun</code> 虚拟网卡</li>
+<li><strong>路由表重构</strong>：所有应用程序的 IP 数据包在路由阶段被强制送入虚拟网卡</li>
+<li><strong>Fake-IP 机制</strong>：DNS 解析返回假 IP (<code>198.18.0.x</code>)，Clash 在内存中完成域名映射后代理发出</li>
+</ol>
+<p><img src="/images/clash-tun-mode.png" alt="TUN 模式配置"></p>
+<h2 id="4-最终结论"><a href="#4-最终结论" class="headerlink" title="4. 最终结论"></a>4. 最终结论</h2><p>最终选择关闭 Proxifier，直接启用 Clash TUN 模式：</p>
+<ul>
+<li>无需手动配置进程规则</li>
+<li>避免遗漏核心进程导致的死循环风险</li>
+<li>终端工具的网络请求被 TUN 网卡透明捕获并代理</li>
+</ul>
+<p><strong>这是目前解决终端网络代理问题最具普适性和稳定性的方案。</strong></p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2026/03/31/%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%88%B0AI%E6%97%B6%E4%BB%A3/">从张雪到AI时代：一个普通人的梦想</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="HANHILL-979/fvac" data-repo-id="R_kgDORzpUgg" data-category="General" data-category-id="DIC_kwDORzpUgs4C5hJY" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hank Hill</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 <div class="busuanzi-count">
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -92,7 +190,7 @@
 
 <script type="text/javascript">
   window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
-  window.canonical["param"] = {"permalink":null,"checklink":"/js/plugins/video.js"};
+  window.canonical["param"] = {"permalink":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/","checklink":"/js/plugins/video.js"};
   // Fix: Ensure page is at the correct top position on data load
   if (history.scrollRestoration) {
     history.scrollRestoration = 'auto';
@@ -728,6 +826,45 @@
 
 
 <!-- optional -->
+
+  <script>
+  (function() {
+    const lazyload = false;
+    
+    function initGiscus() {
+      const el = document.querySelector('#comments #giscus');
+      if (!el) return;
+      
+      function load_giscus() {
+        try {
+          el.innerHTML = '';
+        } catch (error) {
+          console.error(error);
+        }
+        const script = document.createElement('script');
+        script.async = true;
+        for (const key of Object.keys(el.attributes)) {
+          const attr = el.attributes[key];
+          if (['class', 'id'].includes(attr.name) === false) {
+            script.setAttribute(attr.name, attr.value);
+          }
+        }
+        el.appendChild(script);
+      }
+      
+      util.viewportLazyload(el, load_giscus, lazyload);
+    }
+    
+    // Store in global stellar namespace for PJAX reinitialization
+    window.stellar = window.stellar || {};
+    window.stellar.initComments = window.stellar.initComments || {};
+    window.stellar.initComments.giscus = initGiscus;
+    
+    // Initialize on page load
+    initGiscus();
+  })();
+</script>
+
 
 
 
