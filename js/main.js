@@ -200,6 +200,48 @@ const init = {
     window.dispatchEvent(new Event('tabs:register'));
   },
 
+  // Racing rider scroll trigger - appears when reaching page bottom
+  racingRider: () => {
+    const rider = document.getElementById('racingRider')
+    if (!rider) return
+    
+    let hasTriggered = false
+    let scrollTimeout = null
+    
+    const checkScroll = () => {
+      if (hasTriggered) return
+      
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0
+      
+      // Trigger when user scrolls past 85% of the page
+      if (progress > 0.85) {
+        hasTriggered = true
+        rider.classList.add('racing')
+        
+        // Reset after animation completes
+        setTimeout(() => {
+          rider.classList.remove('racing')
+          hasTriggered = false
+        }, 4000)
+      }
+    }
+    
+    // Debounce scroll handler
+    const onScroll = () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(checkScroll, 100)
+    }
+    
+    // Clean up previous listener if exists
+    if (window.stellarRacingHandler) {
+      window.removeEventListener('scroll', window.stellarRacingHandler)
+    }
+    window.stellarRacingHandler = onScroll
+    window.addEventListener('scroll', onScroll)
+  },
+
   canonicalCheck: () => {
     const canonical = window.canonical;
     function originStatusCheck() {
@@ -299,6 +341,7 @@ stellar.initPage = function () {
   init.sidebar();
   init.relativeDate(document.querySelectorAll('#post-meta time'));
   init.registerTabsTag();
+  init.racingRider();
   
   // Reinitialize comments after PJAX navigation
   if (stellar.initComments) {
