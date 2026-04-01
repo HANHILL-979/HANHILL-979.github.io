@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 8.1.1">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,22 +17,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>Archives - HANK's cottage</title>
+  <title>折腾记：怎么让 OpenCode 同时白嫖 Copilot 和 Antigravity - HANK's cottage</title>
 
   
-    <meta name="description" content="recording all the heartpound time">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="https://hanhill-979.github.io/archives/2026/">
+    <meta name="description" content="上回说到，我把终端工具的网络问题搞定了——用 Clash TUN 模式让所有流量都走代理，终于能在终端里正常访问外网。但故事远没有结束：网通了只是第一步，要真正在本地的 OpenCode 里同时用上 GitHub Copilot 和 Google Antigravity 的免费大模型额度，后面还有一连串的坑等着我。 这篇就是续集，记录我从「能上网」到「能白嫖双份 AI 额度」的全过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="折腾记：怎么让 OpenCode 同时白嫖 Copilot 和 Antigravity">
+<meta property="og:url" content="https://hanhill-979.github.io/2026/04/01/%E6%8A%98%E8%85%BE%E8%AE%B0-OpenCode%E5%90%8C%E6%97%B6%E7%99%BD%E5%AB%96Copilot%E5%92%8CAntigravity/">
 <meta property="og:site_name" content="HANK&#39;s cottage">
-<meta property="og:description" content="recording all the heartpound time">
+<meta property="og:description" content="上回说到，我把终端工具的网络问题搞定了——用 Clash TUN 模式让所有流量都走代理，终于能在终端里正常访问外网。但故事远没有结束：网通了只是第一步，要真正在本地的 OpenCode 里同时用上 GitHub Copilot 和 Google Antigravity 的免费大模型额度，后面还有一连串的坑等着我。 这篇就是续集，记录我从「能上网」到「能白嫖双份 AI 额度」的全过程。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hanhill-979.github.io/images/Google_projectid.png">
+<meta property="og:image" content="https://hanhill-979.github.io/images/antigravity%20use.png">
+<meta property="og:image" content="https://hanhill-979.github.io/images/git%20copilot%20use.png">
+<meta property="og:image" content="https://hanhill-979.github.io/images/git%20opencode-antigravity.png">
+<meta property="article:published_time" content="2026-04-01T07:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-01T07:00:56.098Z">
 <meta property="article:author" content="Hank Hill">
+<meta property="article:tag" content="Antigravity">
+<meta property="article:tag" content="Copilot">
+<meta property="article:tag" content="OpenCode">
+<meta property="article:tag" content="技术实践">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hanhill-979.github.io/images/Google_projectid.png">
   
   
   
-  
+  <meta name="keywords" content="OpenCode,Copilot,Antigravity,网络,技术实践">
 
   <!-- feed -->
   
@@ -46,10 +58,10 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://hanhill-979.github.io","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"name":"HANK's cottage","description":"recording all the heartpound time","url":"https://hanhill-979.github.io"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"dateCreated":"2026-04-01T15:00:00+08:00","dateModified":"2026-04-01T15:00:56+08:00","datePublished":"2026-04-01T15:00:00+08:00","description":"上回说到，我把终端工具的网络问题搞定了——用 Clash TUN 模式让所有流量都走代理，终于能在终端里正常访问外网。但故事远没有结束：网通了只是第一步，要真正在本地的 OpenCode 里同时用上 GitHub Copilot 和 Google Antigravity 的免费大模型额度，后面还有一连串的坑等着我。\n这篇就是续集，记录我从「能上网」到「能白嫖双份 AI 额度」的全过程。","headline":"折腾记：怎么让 OpenCode 同时白嫖 Copilot 和 Antigravity","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanhill-979.github.io/2026/04/01/%E6%8A%98%E8%85%BE%E8%AE%B0-OpenCode%E5%90%8C%E6%97%B6%E7%99%BD%E5%AB%96Copilot%E5%92%8CAntigravity/"},"publisher":{"@type":"Organization","name":"Hank Hill","sameAs":[]},"url":"https://hanhill-979.github.io/2026/04/01/%E6%8A%98%E8%85%BE%E8%AE%B0-OpenCode%E5%90%8C%E6%97%B6%E7%99%BD%E5%AB%96Copilot%E5%92%8CAntigravity/","keywords":"OpenCode, Copilot, Antigravity, 网络, 技术实践","image":[]}</script>
   
 </head>
-<body><div id="l_cover"></div><div class="l_body index" id="start" layout="undefined" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><span class="sub cap" style="cursor:pointer" onclick="window.open('https://hankhills.vercel.app/', '_blank')">Ni parachute on my heart</span></a></div></header>
@@ -61,18 +73,105 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2026/04/01/%E6%8A%98%E8%85%BE%E8%AE%B0-OpenCode%E5%90%8C%E6%97%B6%E7%99%BD%E5%AB%96Copilot%E5%92%8CAntigravity/"><span class="title">折腾记：怎么让 OpenCode 同时白嫖 Copilot 和 Antigravity</span></a><a class="item title" href="/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"><span class="title">终端接入大模型API的网络排坑记录</span></a><a class="item title" href="/2026/03/31/%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%88%B0AI%E6%97%B6%E4%BB%A3/"><span class="title">从张雪到AI时代：一个普通人的梦想</span></a><a class="item title" href="/2026/03/31/english%20day2/"><span class="title">CET-6 Vocabulary Journal - Day 2</span></a><a class="item title" href="/2026/03/31/english%20day1/"><span class="title">CET-6 Vocabulary Journal - Day 1</span></a><a class="item title" href="/2026/03/29/To-Xiaoci/"><span class="title">encrypt essay</span></a><a class="item title" href="/2026/03/30/opencode-antigravity-auth-plugin/"><span class="title">Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></a><a class="item title" href="/2026/03/29/CET6-AI-Vocabulary-App/"><span class="title">我的 CET6 词汇学习 App</span></a><a class="item title" href="/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"><span class="title">STM32 SPI 通信配置记录</span></a><a class="item title" href="/2026/03/29/hello-Linda/"><span class="title">Hexo 主题 Markdown 全面渲染测试</span></a></div></widget>
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BD%91%E7%BB%9C%E5%B1%82%E7%9A%84%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%EF%BC%9ATUN-%E5%BC%80%E4%BA%86%EF%BC%8CGit-%E6%8E%A8%E4%B8%8D%E5%8A%A8%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">1. 网络层的遗留问题：TUN 开了，Git 推不动了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Antigravity-%E7%9A%84-400-%E6%8A%A5%E9%94%99%EF%BC%9A%E5%B7%AE%E4%B8%80%E4%B8%AA-Project-ID"><span class="toc-number">2.</span> <span class="toc-text">2. Antigravity 的 400 报错：差一个 Project ID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9C%80%E7%BB%88%E6%95%B4%E5%90%88%EF%BC%9A%E8%AE%A9-OpenCode-%E5%90%8C%E6%97%B6%E8%B0%83%E7%94%A8%E4%B8%A4%E5%AE%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">3. 最终整合：让 OpenCode 同时调用两家模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%EF%BC%88%E8%BF%9B%E7%A8%8B%E5%86%85%E5%8A%AB%E6%8C%81%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 拦截请求（进程内劫持）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%EF%BC%88%E6%9C%AC%E5%9C%B0-OAuth-%E9%97%AD%E7%8E%AF%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 自动登录（本地 OAuth 闭环）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%8D%8F%E8%AE%AE%E7%BF%BB%E8%AF%91%EF%BC%88%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 协议翻译（格式转换）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>Join Discussion</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">HANK's cottage</div><span class="sub cap" style="cursor:pointer" onclick="window.open('https://hankhills.vercel.app/', '_blank')">Ni parachute on my heart</span></a></div></header>
-
- 
 
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">Recent</a><a href="/categories/">Categories</a><a href="/tags/">Tags</a><a class="active" href="/archives/">Archives</a><a href="/today/">Today</a></nav></div></div></div>
-<div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2026</div><div class="archive-list"><a class='post fs14' href="/2026/04/01/%E6%8A%98%E8%85%BE%E8%AE%B0-OpenCode%E5%90%8C%E6%97%B6%E7%99%BD%E5%AB%96Copilot%E5%92%8CAntigravity/"><time>04-01</time><span>折腾记：怎么让 OpenCode 同时白嫖 Copilot 和 Antigravity</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"><time>04-01</time><span>终端接入大模型API的网络排坑记录</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/31/%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%88%B0AI%E6%97%B6%E4%BB%A3/"><time>03-31</time><span>从张雪到AI时代：一个普通人的梦想</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/31/english%20day2/"><time>03-31</time><span>CET-6 Vocabulary Journal - Day 2</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/31/english%20day1/"><time>03-31</time><span>CET-6 Vocabulary Journal - Day 1</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/30/opencode-antigravity-auth-plugin/"><time>03-30</time><span>Opencode Antigravity Auth 插件：通过 Google OAuth 解锁 Antigravity 配额</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/To-Xiaoci/"><time>03-29</time><span>encrypt essay</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/CET6-AI-Vocabulary-App/"><time>03-29</time><span>我的 CET6 词汇学习 App</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/hello-Linda/"><time>03-29</time><span>Hexo 主题 Markdown 全面渲染测试</span></a></div><div class="archive-list"><a class='post fs14' href="/2026/03/29/STM32-SPI-%E9%80%9A%E4%BF%A1%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"><time>03-29</time><span>STM32 SPI 通信配置记录</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-04-01T07:00:00.000Z">2026-04-01</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-04-01T07:00:56.098Z">2026-04-01</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>折腾记：怎么让 OpenCode 同时白嫖 Copilot 和 Antigravity</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>上回说到，我把终端工具的网络问题搞定了——用 Clash TUN 模式让所有流量都走代理，终于能在终端里正常访问外网。但故事远没有结束：网通了只是第一步，要真正在本地的 OpenCode 里同时用上 GitHub Copilot 和 Google Antigravity 的免费大模型额度，后面还有一连串的坑等着我。</p>
+<p>这篇就是续集，记录我从「能上网」到「能白嫖双份 AI 额度」的全过程。</p>
+<span id="more"></span>
+
+<h2 id="1-网络层的遗留问题：TUN-开了，Git-推不动了"><a href="#1-网络层的遗留问题：TUN-开了，Git-推不动了" class="headerlink" title="1. 网络层的遗留问题：TUN 开了，Git 推不动了"></a>1. 网络层的遗留问题：TUN 开了，Git 推不动了</h2><p>上篇已经确认：系统默认的代理设置对底层直接走 Socket 的终端工具没用，得开 TUN 模式，让代理软件在系统底层生成虚拟网卡、重写路由表，把电脑里所有流量都强制劫持到代理节点。</p>
+<p>听起来很完美，但全局劫持也带来了新麻烦。</p>
+<p>我在用 Hexo 部署博客的时候发现：<code>hexo d</code> 死活推不上去。排查后发现，Git 默认用 SSH 协议走 22 端口，而大部分代理节点会直接丢弃 22 端口的流量（安全策略）。</p>
+<p><strong>解决办法很简单</strong>：把 Git 的远程仓库地址从 SSH 换成 HTTPS（走 443 端口）。443 是 HTTPS 的标准端口，代理对它非常宽容，切换之后一切正常，TUN 模式开着也能顺利推代码。</p>
+<blockquote>
+<p>经验总结：全局代理虽好用，但 SSH（22 端口）和一些冷门协议可能被代理节点拦截，遇到连不上的情况先检查端口和协议。</p>
+</blockquote>
+<h2 id="2-Antigravity-的-400-报错：差一个-Project-ID"><a href="#2-Antigravity-的-400-报错：差一个-Project-ID" class="headerlink" title="2. Antigravity 的 400 报错：差一个 Project ID"></a>2. Antigravity 的 400 报错：差一个 Project ID</h2><p>网络通了之后，我迫不及待地打开 Google Antigravity，想直接用里面的免费大模型。结果迎面一个 <strong>HTTP 400 Bad Request</strong>，报错信息写着：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invalid project resource name projects/</span><br></pre></td></tr></table></figure>
+
+<p>翻译成人话就是：你没告诉我你是哪个项目的，我不给你用。</p>
+<p><strong>这里有个容易踩的坑</strong>：这个 “Project” 不是你本地的代码文件夹名，而是 Google Cloud Console 里分配给你的那个全局唯一的 <strong>GCP Project ID</strong>（长得像 <code>true-gradient-xxx</code> 这样的字符串）。Google 底层的 gRPC 接口需要这个 ID 来定位资源和计算配额，本地软件发请求时这个字段是空的，所以被直接拦了。</p>
+<p><img src="/images/Google_projectid.png" alt="Google Cloud Console 中的 Project ID"></p>
+<p><strong>修复步骤</strong>：</p>
+<ol>
+<li>登录 <a target="_blank" rel="noopener" href="https://console.cloud.google.com/">Google Cloud Console</a>，找到你的 Project ID</li>
+<li>打开 Antigravity 软件，找到设置底部的 <strong>[Dev] GCP Project ID</strong> 字段</li>
+<li>把真实的 Project ID 填进去</li>
+</ol>
+<p>填完之后，Antigravity 发请求时会自动把这个 ID 拼到寻址路径里，400 报错消失，免费的大模型额度正式激活。</p>
+<p><img src="/images/antigravity%20use.png" alt="Antigravity 成功激活后的使用界面"></p>
+<h2 id="3-最终整合：让-OpenCode-同时调用两家模型"><a href="#3-最终整合：让-OpenCode-同时调用两家模型" class="headerlink" title="3. 最终整合：让 OpenCode 同时调用两家模型"></a>3. 最终整合：让 OpenCode 同时调用两家模型</h2><p><img src="/images/git%20copilot%20use.png" alt="GitHub Copilot 在 OpenCode 中的使用"></p>
+<p>在这之前，我已经通过 GitHub 学生包的优惠，给 OpenCode 接上了 Copilot 的基础大模型额度。现在 Antigravity 也激活了，问题来了：<strong>怎么让 OpenCode 同时用上这两家的模型？</strong></p>
+<p>答案是一个开源项目：<strong>opencode-antigravity-auth</strong>。</p>
+<p><img src="/images/git%20opencode-antigravity.png" alt="opencode-antigravity-auth 项目"></p>
+<p>别被名字骗了，这个插件干的事情远不止”转发 API”那么简单。它其实是一个跑在本地的反向代理 + 协议转换引擎，大致做了三件事：</p>
+<h3 id="3-1-拦截请求（进程内劫持）"><a href="#3-1-拦截请求（进程内劫持）" class="headerlink" title="3.1 拦截请求（进程内劫持）"></a>3.1 拦截请求（进程内劫持）</h3><p>插件直接在 OpenCode 内部拦截了原生的 <code>fetch()</code> 请求。也就是说，你的请求还没出本机，就被它截住了。</p>
+<h3 id="3-2-自动登录（本地-OAuth-闭环）"><a href="#3-2-自动登录（本地-OAuth-闭环）" class="headerlink" title="3.2 自动登录（本地 OAuth 闭环）"></a>3.2 自动登录（本地 OAuth 闭环）</h3><p>插件会在本地起一个临时的 HTTP 服务器，自动完成 Google 账号的 OAuth 授权流程，静默拿到 Token。你不需要手动复制粘贴任何密钥。</p>
+<h3 id="3-3-协议翻译（格式转换）"><a href="#3-3-协议翻译（格式转换）" class="headerlink" title="3.3 协议翻译（格式转换）"></a>3.3 协议翻译（格式转换）</h3><p>这是最核心的部分。标准的 API 请求格式和 Antigravity 后端要求的格式不一样，插件负责：</p>
+<ul>
+<li>剥掉 Antigravity 不支持的 JSON Schema 字段</li>
+<li>重新组装思维链（Thinking Blocks）</li>
+<li>把前面拿到的 Google 凭据附加上去，然后转发给云端</li>
+</ul>
+<p>通过这套架构，我的 OpenCode 实现了底层模型的无缝切换——写代码时可以随时在 Copilot 和 Antigravity 的模型之间来回跳，<strong>同时享受两家的免费额度</strong>。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>回顾整个过程：从网络层的死循环排查，到云端鉴权的补齐，再到本地 IDE 里的流量劫持和协议重写——每一步都不是玄学，而是对计算机底层机制的理解和验证。</p>
+<p>感谢 Gemini 在排错过程中提供的客观分析，帮我避免了大量无意义的盲目试错；也感谢开源社区，特别是 opencode-antigravity-auth 的维护者，提供了协议转换方案，让”在本地同时用多家大模型”这件事真正变成了现实。</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/">终端接入大模型API的网络排坑记录</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="HANHILL-979/fvac" data-repo-id="R_kgDORzpUgg" data-category="General" data-category-id="DIC_kwDORzpUgs4C5hJY" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hank Hill</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 <div class="busuanzi-count">
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -92,7 +191,7 @@
 
 <script type="text/javascript">
   window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
-  window.canonical["param"] = {"permalink":null,"checklink":"/js/plugins/video.js"};
+  window.canonical["param"] = {"permalink":"https://hanhill-979.github.io/2026/04/01/%E6%8A%98%E8%85%BE%E8%AE%B0-OpenCode%E5%90%8C%E6%97%B6%E7%99%BD%E5%AB%96Copilot%E5%92%8CAntigravity/","checklink":"/js/plugins/video.js"};
   // Fix: Ensure page is at the correct top position on data load
   if (history.scrollRestoration) {
     history.scrollRestoration = 'auto';
@@ -728,6 +827,45 @@
 
 
 <!-- optional -->
+
+  <script>
+  (function() {
+    const lazyload = false;
+    
+    function initGiscus() {
+      const el = document.querySelector('#comments #giscus');
+      if (!el) return;
+      
+      function load_giscus() {
+        try {
+          el.innerHTML = '';
+        } catch (error) {
+          console.error(error);
+        }
+        const script = document.createElement('script');
+        script.async = true;
+        for (const key of Object.keys(el.attributes)) {
+          const attr = el.attributes[key];
+          if (['class', 'id'].includes(attr.name) === false) {
+            script.setAttribute(attr.name, attr.value);
+          }
+        }
+        el.appendChild(script);
+      }
+      
+      util.viewportLazyload(el, load_giscus, lazyload);
+    }
+    
+    // Store in global stellar namespace for PJAX reinitialization
+    window.stellar = window.stellar || {};
+    window.stellar.initComments = window.stellar.initComments || {};
+    window.stellar.initComments.giscus = initGiscus;
+    
+    // Initialize on page load
+    initGiscus();
+  })();
+</script>
+
 
 
 
