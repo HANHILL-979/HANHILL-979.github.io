@@ -200,10 +200,10 @@ const init = {
     window.dispatchEvent(new Event('tabs:register'));
   },
 
-  // Racing rider scroll trigger - appears when reaching page bottom
-  racingRider: () => {
-    const rider = document.getElementById('racingRider')
-    if (!rider) return
+  // Royale pig scroll trigger - appears when reaching page bottom
+  royalePig: () => {
+    const pig = document.getElementById('royalePig')
+    if (!pig) return
     
     let hasTriggered = false
     let scrollTimeout = null
@@ -215,16 +215,16 @@ const init = {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
       const progress = docHeight > 0 ? scrollTop / docHeight : 0
       
-      // Trigger when user scrolls past 85% of the page
-      if (progress > 0.85) {
+      // Trigger when user scrolls past 88% of the page
+      if (progress > 0.88) {
         hasTriggered = true
-        rider.classList.add('racing')
+        pig.classList.add('launch')
         
         // Reset after animation completes
         setTimeout(() => {
-          rider.classList.remove('racing')
+          pig.classList.remove('launch')
           hasTriggered = false
-        }, 4000)
+        }, 3400)
       }
     }
     
@@ -235,10 +235,10 @@ const init = {
     }
     
     // Clean up previous listener if exists
-    if (window.stellarRacingHandler) {
-      window.removeEventListener('scroll', window.stellarRacingHandler)
+    if (window.stellarPigHandler) {
+      window.removeEventListener('scroll', window.stellarPigHandler)
     }
-    window.stellarRacingHandler = onScroll
+    window.stellarPigHandler = onScroll
     window.addEventListener('scroll', onScroll)
   },
 
@@ -341,7 +341,7 @@ stellar.initPage = function () {
   init.sidebar();
   init.relativeDate(document.querySelectorAll('#post-meta time'));
   init.registerTabsTag();
-  init.racingRider();
+  init.royalePig();
   
   // Reinitialize comments after PJAX navigation
   if (stellar.initComments) {
