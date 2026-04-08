@@ -150,7 +150,7 @@
   position: relative;
 }
 .l_left::after {
-  content: '🏍️';
+  content: '🏁';
   position: absolute;
   bottom: 16px;
   right: 16px;
@@ -165,17 +165,41 @@
 .racing-rider {
   position: fixed;
   bottom: 24px;
-  left: -120px;
-  font-size: 2rem;
+  left: -300px;
+  font-size: 2.5rem;
   z-index: 100;
   opacity: 0;
   transition: none;
   pointer-events: none;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 3px 8px rgba(216,46,224,0.4));
 }
 .racing-rider.racing {
   opacity: 1;
-  animation: rideAcross 3.5s ease-in-out forwards;
+  animation: rideAcross 4s linear forwards;
+}
+:root {
+  --theme: #d82ee0;
+  --accent: #5ebb2c;
+}
+.md-text ul > li {
+  list-style: none;
+  position: relative;
+}
+.md-text ul > li::before {
+  content: '🟣';
+  position: absolute;
+  left: -1.3rem;
+  font-size: 0.9em;
+  top: 0.1em;
+}
+.widget-wrapper,
+.post-list .post-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+}
+.widget-wrapper:hover,
+.post-list .post-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 16px -4px rgba(216,46,224,0.2) !important;
 }
 @media screen and (max-width: 667px) {
   .l_left::after {
@@ -184,13 +208,13 @@
 }
 @-moz-keyframes rideAcross {
   0% {
-    left: -120px;
+    left: -300px;
     opacity: 0;
   }
   8% {
     opacity: 1;
   }
-  85% {
+  90% {
     opacity: 1;
   }
   100% {
@@ -200,13 +224,13 @@
 }
 @-webkit-keyframes rideAcross {
   0% {
-    left: -120px;
+    left: -300px;
     opacity: 0;
   }
   8% {
     opacity: 1;
   }
-  85% {
+  90% {
     opacity: 1;
   }
   100% {
@@ -216,13 +240,13 @@
 }
 @-o-keyframes rideAcross {
   0% {
-    left: -120px;
+    left: -300px;
     opacity: 0;
   }
   8% {
     opacity: 1;
   }
-  85% {
+  90% {
     opacity: 1;
   }
   100% {
@@ -232,13 +256,13 @@
 }
 @keyframes rideAcross {
   0% {
-    left: -120px;
+    left: -300px;
     opacity: 0;
   }
   8% {
     opacity: 1;
   }
-  85% {
+  90% {
     opacity: 1;
   }
   100% {
