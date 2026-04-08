@@ -43,7 +43,7 @@
   
   
   
-  <meta name="keywords" content="网络,技术实践,代理,Clash,TUN">
+  <meta name="keywords" content="网络,代理,Clash,TUN,技术实践">
 
   <!-- feed -->
   
@@ -57,7 +57,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"dateCreated":"2026-04-01T10:30:00+08:00","dateModified":"2026-04-01T13:59:53+08:00","datePublished":"2026-04-01T10:30:00+08:00","description":"日常开发中经常需要通过终端工具调用外部大模型 API。最近在使用 opencode 时遇到一个典型问题：浏览器能正常访问外网，但终端请求却持续报错、无法连通 API。\n本文记录了完整的排查过程，包括使用 Proxifier 的尝试与踩坑，以及最终采用 Clash TUN 模式的解决方案。","headline":"终端接入大模型API的网络排坑记录","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"},"publisher":{"@type":"Organization","name":"Hank Hill","sameAs":[]},"url":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/","keywords":"网络, 技术实践, 代理, Clash, TUN","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hank Hill","sameAs":[]},"dateCreated":"2026-04-01T10:30:00+08:00","dateModified":"2026-04-01T13:59:53+08:00","datePublished":"2026-04-01T10:30:00+08:00","description":"日常开发中经常需要通过终端工具调用外部大模型 API。最近在使用 opencode 时遇到一个典型问题：浏览器能正常访问外网，但终端请求却持续报错、无法连通 API。\n本文记录了完整的排查过程，包括使用 Proxifier 的尝试与踩坑，以及最终采用 Clash TUN 模式的解决方案。","headline":"终端接入大模型API的网络排坑记录","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/"},"publisher":{"@type":"Organization","name":"Hank Hill","sameAs":[]},"url":"https://hanhill-979.github.io/2026/04/01/%E7%BB%88%E7%AB%AF%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%92%E5%9D%91%E8%AE%B0%E5%BD%95/","keywords":"网络, 代理, Clash, TUN, 技术实践","image":[]}</script>
   
 </head>
 <body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
