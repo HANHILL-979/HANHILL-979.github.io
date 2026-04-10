@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>The Architecture of Resilience: From Embryo to Equilibrium</title>
+    <url>/2026/04/10/%E4%BB%8A%E6%97%A5%E6%8E%A8%E6%96%87/</url>
+    <content><![CDATA[The Lifecycle of a SystemEvery great innovation begins as an embryo��a fragile, undeveloped concept that contains the genetic blueprint for a future reality. In these early stages, the project is often kept in a state of stealth, shielded from the noise of the market to prevent external pressures from stifling its growth. Success at this level depends on recognizing the nuance of the environment; the subtle differences in feedback that signify whether an idea is ready for the world or requires further refinement.
+The Dynamics of OscillationAs a system matures and moves from the lab to the market, it becomes prone to the physical laws of social and economic cycles. Much like a mechanical pendulum, momentum tends to oscillate between periods of rapid expansion and necessary contraction. To withstand these swings, an organization must develop a diverse modality of operation��different ways of functioning that allow it to remain stable under varying conditions. 
+It is a pivotal moment when a technology vendor realizes that the old path has reached its limit. At this point, they must execute a strategic pivot. This is not an act of desperation, but a calculated realignment. It often involves the formation of a coalition with former rivals or academic institutions, creating a potent alliance that can force a breach through the walls of a stagnant industry.
+The Logic of Maintenance and PowerHowever, a system is only as strong as its maintenance layer. While industry prophets focus on the grand vision of the future, the day-to-day survival of the project often falls to the “system janitor“��those who handle the unglamorous task of cleaning up legacy code, fixing errors, and ensuring the infrastructure can abide by the strict regulatory and physical constraints of the field. Without this maintenance, the system becomes vulnerable to decay and external attack.
+Power dynamics also play a critical role in how a system evolves. A dominant market force may attempt to oppress smaller innovators through aggressive patenting or exclusionary tactics. Yet, history shows that even the most rigid structures have a breaking point. When a system becomes too inflexible to allow for nuance and growth, a breach becomes inevitable. 
+Ultimately, the goal is to create a system that does not merely survive change but uses the momentum of the pendulum to its advantage. By understanding the transition from the embryo of an idea to the potent force of a market leader, we can better navigate the complex shifts that define our technological landscape.
+]]></content>
+  </entry>
+  <entry>
     <title>Obscure Love - A Monologue</title>
     <url>/2026/04/08/Obscure-Love-A-Monologue/</url>
     <content><![CDATA[Today, I cannot help but miss her.
@@ -71,11 +82,11 @@ Invalid project resource name projects/
         <category>技术笔记</category>
       </categories>
       <tags>
+        <tag>网络</tag>
+        <tag>技术实践</tag>
         <tag>OpenCode</tag>
         <tag>Copilot</tag>
         <tag>Antigravity</tag>
-        <tag>网络</tag>
-        <tag>技术实践</tag>
       </tags>
   </entry>
   <entry>
@@ -128,10 +139,10 @@ Fake-IP 机制：DNS 解析返回假 IP (198.18.0.x)，Clash 在内存中完成�
       </categories>
       <tags>
         <tag>网络</tag>
-        <tag>技术实践</tag>
         <tag>代理</tag>
         <tag>Clash</tag>
         <tag>TUN</tag>
+        <tag>技术实践</tag>
       </tags>
   </entry>
   <entry>
@@ -176,9 +187,9 @@ People admire me — a man of humble, grassroots origins who remains deeply comm
         <category>Thoughts</category>
       </categories>
       <tags>
-        <tag>AI</tag>
         <tag>life</tag>
         <tag>thinking</tag>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
