@@ -146,40 +146,9 @@
 .widget-wrapper.trophy .trophy-meta .target {
   font-weight: 400;
 }
-.l_left {
-  position: relative;
-}
-.l_left::after {
-  content: '🏁';
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  font-size: 1.5rem;
-  opacity: 0.5;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.l_left:hover::after {
-  opacity: 1;
-  transform: translateX(4px);
-}
-.racing-rider {
-  position: fixed;
-  bottom: 24px;
-  left: -300px;
-  font-size: 2.5rem;
-  z-index: 100;
-  opacity: 0;
-  transition: none;
-  pointer-events: none;
-  filter: drop-shadow(0 3px 8px rgba(216,46,224,0.4));
-}
-.racing-rider.racing {
-  opacity: 1;
-  animation: rideAcross 4s linear forwards;
-}
 :root {
-  --theme: #d82ee0;
-  --accent: #5ebb2c;
+  --theme: #af52de;
+  --accent: #34c759;
 }
 .md-text ul > li {
   list-style: none;
@@ -188,86 +157,101 @@
 .md-text ul > li::before {
   content: '🟣';
   position: absolute;
-  left: -1.3rem;
-  font-size: 0.9em;
-  top: 0.1em;
+  left: -1.2rem;
+  font-size: 0.75em;
+  top: 0.25em;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 2px rgba(175,82,222,0.3));
 }
 .widget-wrapper,
 .post-list .post-card {
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  border: 1px solid rgba(0,0,0,0.02);
 }
 .widget-wrapper:hover,
 .post-list .post-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 16px -4px rgba(216,46,224,0.2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 28px -6px rgba(0,0,0,0.08), 0 4px 8px -2px rgba(0,0,0,0.04) !important;
+}
+.elixir-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--theme), var(--accent));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(175,82,222,0.5);
+  pointer-events: none;
+}
+.mac-toast {
+  position: fixed;
+  top: 24px;
+  right: -320px;
+  width: 280px;
+  padding: 16px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 16px;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.mac-toast.show {
+  right: 24px;
+  opacity: 1;
+  visibility: visible;
+}
+.mac-toast .toast-icon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+.mac-toast .toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mac-toast .toast-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+}
+.mac-toast .toast-desc {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-size: 12px;
+  color: #86868b;
+}
+[data-theme='dark'] .mac-toast {
+  background: rgba(30,30,30,0.65);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+[data-theme='dark'] .mac-toast .toast-title {
+  color: #f5f5f7;
+}
+[data-theme='dark'] .mac-toast .toast-desc {
+  color: #a1a1a6;
 }
 @media screen and (max-width: 667px) {
-  .l_left::after {
-    display: none;
+  .mac-toast {
+    top: auto;
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%) translateY(120px);
   }
-}
-@-moz-keyframes rideAcross {
-  0% {
-    left: -300px;
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: calc(100vw + 60px);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes rideAcross {
-  0% {
-    left: -300px;
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: calc(100vw + 60px);
-    opacity: 0;
-  }
-}
-@-o-keyframes rideAcross {
-  0% {
-    left: -300px;
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: calc(100vw + 60px);
-    opacity: 0;
-  }
-}
-@keyframes rideAcross {
-  0% {
-    left: -300px;
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: calc(100vw + 60px);
-    opacity: 0;
+  .mac-toast.show {
+    right: 50%;
+    transform: translateX(50%) translateY(0);
   }
 }
 :root {

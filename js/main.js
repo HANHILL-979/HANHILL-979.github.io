@@ -200,46 +200,48 @@ const init = {
     window.dispatchEvent(new Event('tabs:register'));
   },
 
-  // Racing rider scroll trigger - appears when reaching page bottom
-  racingRider: () => {
-    const rider = document.getElementById('racingRider')
-    if (!rider) return
+  // Apple style progress bar & macOS toast for CR easter egg
+  macScrollEffect: () => {
+    const progressEl = document.getElementById('elixirProgress');
+    const toastEl = document.getElementById('macToast');
+    if (!progressEl || !toastEl) return;
     
-    let hasTriggered = false
-    let scrollTimeout = null
+    let hasTriggered = false;
+    let toastTimeout = null;
     
-    const checkScroll = () => {
-      if (hasTriggered) return
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
       
-      const scrollTop = window.scrollY || document.documentElement.scrollTop
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = docHeight > 0 ? scrollTop / docHeight : 0
+      // Update sleek progress bar width
+      progressEl.style.width = Math.min(progress * 100, 100) + '%';
       
-      // Trigger when user scrolls past 85% of the page
-      if (progress > 0.85) {
-        hasTriggered = true
-        rider.classList.add('racing')
+      // Trigger toast at bottom (about 90%)
+      if (progress > 0.90 && !hasTriggered) {
+        hasTriggered = true;
+        toastEl.classList.add('show');
         
-        // Reset after animation completes
-        setTimeout(() => {
-          rider.classList.remove('racing')
-          hasTriggered = false
-        }, 4000)
+        // Auto hide after 5s
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toastEl.classList.remove('show');
+        }, 5000);
+      } else if (progress < 0.70) {
+        // Reset if scrolled back up enough
+        hasTriggered = false;
+        toastEl.classList.remove('show');
       }
-    }
+    };
     
-    // Debounce scroll handler
-    const onScroll = () => {
-      if (scrollTimeout) clearTimeout(scrollTimeout)
-      scrollTimeout = setTimeout(checkScroll, 100)
+    if (window.stellarMacScrollHandler) {
+      window.removeEventListener('scroll', window.stellarMacScrollHandler);
     }
+    window.stellarMacScrollHandler = handleScroll;
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Clean up previous listener if exists
-    if (window.stellarRacingHandler) {
-      window.removeEventListener('scroll', window.stellarRacingHandler)
-    }
-    window.stellarRacingHandler = onScroll
-    window.addEventListener('scroll', onScroll)
+    // Init state
+    handleScroll();
   },
 
   canonicalCheck: () => {
@@ -341,7 +343,7 @@ stellar.initPage = function () {
   init.sidebar();
   init.relativeDate(document.querySelectorAll('#post-meta time'));
   init.registerTabsTag();
-  init.racingRider();
+  init.macScrollEffect();
   
   // Reinitialize comments after PJAX navigation
   if (stellar.initComments) {
